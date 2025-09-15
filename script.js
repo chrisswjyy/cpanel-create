@@ -1,6 +1,6 @@
 // Configuration
 const CONFIG = {
-    BACKEND_URL: 'https://apii-g7fhjcqvr-christopers-projects-7ae7f363.vercel.app/'
+    BACKEND_URL: 'https://apii-chi.vercel.app/api/test'
 };
 
 // Global state
