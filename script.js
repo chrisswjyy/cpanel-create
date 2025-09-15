@@ -1,6 +1,6 @@
 // Configuration
 const CONFIG = {
-    BACKEND_URL: 'https://apii-chi.vercel.app/api/test'
+    BACKEND_URL: 'https://apii-chi.vercel.app'
 };
 
 // Global state
