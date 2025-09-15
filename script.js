@@ -1,6 +1,6 @@
 // Configuration
 const CONFIG = {
-    BACKEND_URL: 'http://chrissoffc.my.id:2008'
+    BACKEND_URL: 'https://chrissoffc.my.id:2008'
 };
 
 // Global state
