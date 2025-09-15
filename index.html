@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Pterodactyl By @chriswijaya</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/jpg" href="https://files.catbox.moe/hwrhum.jpg">
+</head>
+<body>
+    <!-- Login Screen -->
+    <div class="screen-container" id="loginScreen">
+        <div class="card">
+            <div class="header">
+                <h1>Login Akun Reseller</h1>
+                <p>Autentikasi Diperlukan</p>
+                <div class="server-status">
+                    <div class="status-indicator" id="serverStatus">
+                        <span class="status-dot"></span>
+                        <span class="status-text">Checking...</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-section">
+                <div class="input-group">
+                    <label for="accessToken">Token akses</label>
+                    <div class="input-wrapper">
+                        <input type="password" id="accessToken" placeholder="Enter your token..." autocomplete="off">
+                        <button type="button" class="toggle-btn" onclick="toggleTokenVisibility()">
+                            <span id="toggleIcon">👁</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <button class="btn primary" onclick="initiateLogin()" id="loginBtn">
+                    <span class="btn-text">Login</span>
+                    <span class="btn-loader" id="loginLoader"></span>
+                </button>
+            </div>
+
+            <div class="output" id="loginOutput"></div>
+        </div>
+    </div>
+
+    <!-- Panel Screen -->
+    <div class="screen-container hidden" id="panelScreen">
+        <div class="card">
+            <div class="header">
+                <h1>Create Pterodactyl</h1>
+                <div class="server-status">
+                    <div class="status-indicator" id="serverStatusPanel">
+                        <span class="status-dot"></span>
+                        <span class="status-text">Checking...</span>
+                    </div>
+                </div>
+                <div class="user-info">
+                    <span>Welcome, <strong id="userName">User</strong></span>
+                    <button class="logout-btn" onclick="terminateSession()">Logout</button>
+                </div>
+            </div>
+            
+            <div class="form-section">
+                <div class="input-group">
+                    <label for="targetUser">Username</label>
+                    <input type="text" id="targetUser" placeholder="Enter username..." autocomplete="off">
+                </div>
+
+                <div class="input-group">
+                    <label for="ramSelector">RAM Allocation</label>
+                    <select id="ramSelector" onchange="updateResourceDisplay()">
+                        <option value="1000">1GB RAM</option>
+                        <option value="2000">2GB RAM</option>
+                        <option value="3000">3GB RAM</option>
+                        <option value="4000">4GB RAM</option>
+                        <option value="5000">5GB RAM</option>
+                        <option value="6000">6GB RAM</option>
+                        <option value="7000">7GB RAM</option>
+                        <option value="8000">8GB RAM</option>
+                        <option value="9000">9GB RAM</option>
+                        <option value="10000">10GB RAM</option>
+                        <option value="0">Unlimited</option>
+                    </select>
+                </div>
+                
+                <button class="btn primary" onclick="executePanelCreation()" id="createBtn">
+                    <span class="btn-text">Create Panel</span>
+                    <span class="btn-loader" id="createLoader"></span>
+                </button>
+            </div>
+
+            <div class="output" id="panelOutput"></div>
+        </div>
+    </div>
+
+    <!-- Notifications -->
+    <div class="notification-container" id="notificationContainer"></div>
+
+    <!-- Watermark -->
+    <div class="watermark"> telegram: @chriswijaya</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
